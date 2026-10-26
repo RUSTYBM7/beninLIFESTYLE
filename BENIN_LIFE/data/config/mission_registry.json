@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "missions": [
+    {
+      "id": "ikpoba_morning_errand",
+      "title": "Morning Errand — Ikpoba Hill",
+      "district": "ikpoba_hill",
+      "steps": [
+        {
+          "id": "leave_compound",
+          "objective": "Leave your compound and reach the roadside on Ikpoba Hill.",
+          "target_poi": "ikpoba_roadside",
+          "reward_naira": 0
+        },
+        {
+          "id": "meet_contact",
+          "objective": "Meet the contact near Ramat Park approach.",
+          "target_poi": "ramat_park_approach",
+          "reward_naira": 0
+        },
+        {
+          "id": "deliver_package",
+          "objective": "Deliver the package to the shop near the flyover.",
+          "target_poi": "flyover_shop",
+          "reward_naira": 3500
+        },
+        {
+          "id": "return_home",
+          "objective": "Return to your compound and rest.",
+          "target_poi": "ikpoba_compound",
+          "reward_naira": 500
+        }
+      ]
+    }
+  ]
+}
