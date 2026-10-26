@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BENIN LIFE — Ikpoba Hill Slice</title>
+  <title>BENIN LIFE — Street Missions</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="app">
     <header class="top">
-      <div class="brand"><span class="mark">BL</span><div><strong>BENIN LIFE</strong><small>Ikpoba Hill vertical slice · systems prototype</small></div></div>
+      <div class="brand"><span class="mark">BL</span><div><strong>BENIN LIFE</strong><small>GTA-pattern street missions · Benin City</small></div></div>
       <div class="top-meta"><span id="clock">08:00</span> · Day <span id="dayNum">1</span> · <span id="phase">Morning</span></div>
     </header>
     <div class="grid">
       <aside class="side">
         <section class="card">
           <h2>You</h2>
-          <p class="name" id="playerName">Resident · Ikpoba Hill</p>
           <div class="stats">
             <div><label>Cash</label><b id="cash">₦25,000</b></div>
             <div><label>Bank</label><b id="bank">₦0</b></div>
@@ -26,18 +25,23 @@
           </div>
         </section>
         <section class="card">
-          <h2>Mission</h2>
-          <p class="mission-title" id="missionTitle">Morning Errand — Ikpoba Hill</p>
-          <p class="objective" id="objective">Leave your compound and reach the roadside.</p>
+          <h2>Street missions</h2>
+          <div class="mission-list" id="missionList"></div>
+        </section>
+        <section class="card">
+          <h2>Active</h2>
+          <p class="mission-title" id="missionTitle">Select a street mission</p>
+          <p class="brief" id="missionBrief">Briefing appears here.</p>
+          <p class="objective" id="objective">—</p>
           <div class="steps" id="steps"></div>
-          <button id="btnAdvanceMission" class="primary" disabled>Complete current step</button>
+          <button id="btnAdvanceMission" class="primary" disabled>Complete checkpoint</button>
         </section>
         <section class="card">
           <h2>Actions</h2>
           <div class="actions">
             <button id="btnTravel">Travel to objective</button>
-            <button id="btnOkada">Take okada (₦500)</button>
-            <button id="btnEat">Eat street food (₦800)</button>
+            <button id="btnOkada">Okada (₦500)</button>
+            <button id="btnEat">Street food (₦800)</button>
             <button id="btnDeposit">Deposit ₦5,000</button>
             <button id="btnWithdraw">Withdraw ₦2,000</button>
             <button id="btnTime">Advance 3 hours</button>
@@ -56,7 +60,7 @@
       </aside>
       <main class="map-panel">
         <div id="map"></div>
-        <div class="map-hint">Tap map markers · follow mission along Ikpoba → Ramat Park</div>
+        <div class="map-hint">Missions use Benin-area points · OSM map · systems prototype</div>
       </main>
     </div>
   </div>
