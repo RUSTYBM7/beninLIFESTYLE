@@ -1,35 +1,93 @@
 {
-  "version": 1,
+  "version": 2,
+  "design_notes": {
+    "pattern": "GTA-style: Briefing → Travel → Core → Payoff",
+    "tone": "Indigenous Benin City street life",
+    "currency": "Integer NGN fiction only"
+  },
   "missions": [
     {
       "id": "ikpoba_morning_errand",
       "title": "Morning Errand — Ikpoba Hill",
-      "district": "ikpoba_hill",
+      "gta_archetype": "Delivery / contact",
+      "briefing": "Neighbor package toward Ramat Park before the sun peaks.",
       "steps": [
-        {
-          "id": "leave_compound",
-          "objective": "Leave your compound and reach the roadside on Ikpoba Hill.",
-          "target_poi": "ikpoba_roadside",
-          "reward_naira": 0
-        },
-        {
-          "id": "meet_contact",
-          "objective": "Meet the contact near Ramat Park approach.",
-          "target_poi": "ramat_park_approach",
-          "reward_naira": 0
-        },
-        {
-          "id": "deliver_package",
-          "objective": "Deliver the package to the shop near the flyover.",
-          "target_poi": "flyover_shop",
-          "reward_naira": 3500
-        },
-        {
-          "id": "return_home",
-          "objective": "Return to your compound and rest.",
-          "target_poi": "ikpoba_compound",
-          "reward_naira": 500
-        }
+        { "id": "leave_compound", "phase": "setup", "objective": "Reach Ikpoba roadside.", "target_poi": "ikpoba_roadside", "reward_naira": 0 },
+        { "id": "meet_contact", "phase": "travel", "objective": "Meet contact near Ramat Park approach.", "target_poi": "ramat_park_approach", "reward_naira": 0 },
+        { "id": "deliver_package", "phase": "core", "objective": "Deliver at flyover shop.", "target_poi": "flyover_shop", "reward_naira": 3500 },
+        { "id": "return_home", "phase": "payoff", "objective": "Return to compound.", "target_poi": "ikpoba_compound", "reward_naira": 500 }
+      ]
+    },
+    {
+      "id": "oko_market_run",
+      "title": "Oba Market Run",
+      "gta_archetype": "Multi-stop collection",
+      "briefing": "Tomatoes, smoked fish, palm oil — Mama's list.",
+      "steps": [
+        { "id": "reach_market_gate", "phase": "travel", "objective": "Reach Oba Market approach.", "target_poi": "oba_market_approach", "reward_naira": 0 },
+        { "id": "buy_tomatoes", "phase": "core", "objective": "Tomatoes ₦1,200.", "target_poi": "market_veg_stall", "cost_naira": 1200, "reward_naira": 0 },
+        { "id": "buy_fish", "phase": "core", "objective": "Smoked fish ₦2,500.", "target_poi": "market_fish_stall", "cost_naira": 2500, "reward_naira": 0 },
+        { "id": "buy_oil", "phase": "core", "objective": "Palm oil ₦1,800.", "target_poi": "market_oil_stall", "cost_naira": 1800, "reward_naira": 0 },
+        { "id": "return_with_goods", "phase": "payoff", "objective": "Return home with goods.", "target_poi": "ikpoba_compound", "reward_naira": 4000 }
+      ]
+    },
+    {
+      "id": "generator_fuel_hustle",
+      "title": "Fuel Before NEPA Takes Light",
+      "gta_archetype": "Time-pressure resource",
+      "briefing": "Fuel the generator before light dies.",
+      "steps": [
+        { "id": "leave_for_station", "phase": "setup", "objective": "Reach roadside.", "target_poi": "ikpoba_roadside", "reward_naira": 0 },
+        { "id": "reach_station", "phase": "travel", "objective": "Reach filling station.", "target_poi": "filling_station_corridor", "reward_naira": 0 },
+        { "id": "buy_fuel", "phase": "core", "objective": "Buy fuel ₦8,000.", "target_poi": "filling_station_corridor", "cost_naira": 8000, "reward_naira": 0 },
+        { "id": "return_before_dark", "phase": "payoff", "objective": "Return with fuel.", "target_poi": "ikpoba_compound", "reward_naira": 2500 }
+      ]
+    },
+    {
+      "id": "okada_pickup_chain",
+      "title": "Okada Side Hustle",
+      "gta_archetype": "Fare chain",
+      "briefing": "Three drops. Settle the cut.",
+      "steps": [
+        { "id": "meet_rider", "phase": "setup", "objective": "Meet at Ikpoba roadside.", "target_poi": "ikpoba_roadside", "reward_naira": 0 },
+        { "id": "drop_one", "phase": "core", "objective": "Drop at Ramat Park approach.", "target_poi": "ramat_park_approach", "reward_naira": 1500 },
+        { "id": "drop_two", "phase": "core", "objective": "Drop at flyover strip.", "target_poi": "flyover_shop", "reward_naira": 1800 },
+        { "id": "final_settle", "phase": "payoff", "objective": "Settle at roadside.", "target_poi": "ikpoba_roadside", "reward_naira": 2200 }
+      ]
+    },
+    {
+      "id": "sunday_service_respect",
+      "title": "Sunday Service & Respect",
+      "gta_archetype": "Social / reputation",
+      "briefing": "Service, then help a neighbor home.",
+      "steps": [
+        { "id": "dress_and_leave", "phase": "setup", "objective": "Leave for service.", "target_poi": "ikpoba_roadside", "reward_naira": 0 },
+        { "id": "reach_church", "phase": "travel", "objective": "Reach local church.", "target_poi": "local_church_approach", "reward_naira": 0 },
+        { "id": "attend_brief", "phase": "core", "objective": "Attend service window.", "target_poi": "local_church_approach", "reward_naira": 0, "rep_delta": 3 },
+        { "id": "escort_neighbor", "phase": "payoff", "objective": "Escort toward compound.", "target_poi": "ikpoba_compound", "reward_naira": 1000, "rep_delta": 2 }
+      ]
+    },
+    {
+      "id": "night_spot_check",
+      "title": "Night Spot — One Round Only",
+      "gta_archetype": "Nightlife spend control",
+      "briefing": "One round. Leave clean.",
+      "steps": [
+        { "id": "reach_spot", "phase": "travel", "objective": "Reach night spot.", "target_poi": "night_spot_corridor", "reward_naira": 0 },
+        { "id": "buy_round", "phase": "core", "objective": "Buy round ₦6,000.", "target_poi": "night_spot_corridor", "cost_naira": 6000, "reward_naira": 0, "rep_delta": 2 },
+        { "id": "leave_clean", "phase": "payoff", "objective": "Leave toward Ikpoba roadside.", "target_poi": "ikpoba_roadside", "reward_naira": 1500 }
+      ]
+    },
+    {
+      "id": "school_fees_pressure",
+      "title": "School Fees Deadline",
+      "gta_archetype": "High-stakes payment",
+      "briefing": "Collect balance, pay fees today.",
+      "steps": [
+        { "id": "collect_balance", "phase": "setup", "objective": "Collect at flyover shop.", "target_poi": "flyover_shop", "reward_naira": 15000 },
+        { "id": "reach_school", "phase": "travel", "objective": "Reach school gate.", "target_poi": "school_gate_approach", "reward_naira": 0 },
+        { "id": "pay_fees", "phase": "core", "objective": "Pay fees ₦18,000.", "target_poi": "school_gate_approach", "cost_naira": 18000, "reward_naira": 0, "rep_delta": 5 },
+        { "id": "report_home", "phase": "payoff", "objective": "Return home.", "target_poi": "ikpoba_compound", "reward_naira": 2000 }
       ]
     }
   ]
