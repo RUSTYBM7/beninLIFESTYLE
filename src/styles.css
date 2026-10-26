@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --color-bg: #14110e;
+  --color-surface: #221c16;
+  --color-surface-2: #2c241c;
+  --color-fg: #f4ebd8;
+  --color-muted: #b3a48e;
+  --color-primary: #d4652f;
+  --color-primary-fg: #1a0f0a;
+  --color-brass: #e0b15a;
+  --color-line: #3a3128;
+  --color-palm: #3e6b52;
+  --color-skin-0: #3a2418;
+  --color-skin-1: #5c3a28;
+  --color-skin-2: #7a4f34;
+  --color-skin-3: #8e6244;
+  --color-cloth-0: #d4652f;
+  --color-cloth-1: #1f4d3a;
+  --color-cloth-2: #e7d3b0;
+  --color-cloth-3: #243044;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  html,
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    overflow: hidden;
+    font-family: var(--font-sans);
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.game-root {
+  touch-action: none;
+}
+
+.vignette {
+  pointer-events: none;
+  box-shadow: inset 0 0 150px rgb(8 5 3 / 0.55);
+}
+
+.touch-controls {
+  display: none;
+}
+
+.safe-top {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+}
+
+.safe-bot {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+@media (max-width: 860px), (pointer: coarse) {
+  .touch-controls {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hud-pop {
+    animation: none;
+  }
+}

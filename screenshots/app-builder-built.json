@@ -1,0 +1,40 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "BENIN LIFE",
+      "hasCanvas": true,
+      "bodyTextLen": 414,
+      "bodyTextHash": "8acdbc626a0527c3918d459b1b7c47777597610f504f4a33020cebd37bc47b2e",
+      "bodyTextPrefix": "BENIN CITY · OPEN CORRIDOR BENIN LIFE Ikpoba Hill to Ramat Park.",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "BENIN LIFE",
+      "hasCanvas": true,
+      "bodyTextLen": 414,
+      "bodyTextHash": "8acdbc626a0527c3918d459b1b7c47777597610f504f4a33020cebd37bc47b2e",
+      "bodyTextPrefix": "BENIN CITY · OPEN CORRIDOR BENIN LIFE Ikpoba Hill to Ramat Park.",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": true,
+  "baselineReasons": [
+    "desktop: body text replaced (similar length, page start changed)"
+  ]
+}
