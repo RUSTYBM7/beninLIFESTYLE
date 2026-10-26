@@ -1,0 +1,69 @@
+{
+  "type": "FeatureCollection",
+  "name": "ikpoba_hill_vertical_slice",
+  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ikpoba_compound",
+        "name": "Ikpoba Hill Compound (starter)",
+        "kind": "housing",
+        "confidence": "approximate",
+        "notes": "Graybox spawn. Not a surveyed private address."
+      },
+      "geometry": { "type": "Point", "coordinates": [5.6505, 6.3390] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ikpoba_roadside",
+        "name": "Ikpoba Hill Roadside",
+        "kind": "road_node",
+        "confidence": "approximate"
+      },
+      "geometry": { "type": "Point", "coordinates": [5.6512, 6.3382] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ramat_park_approach",
+        "name": "Ramat Park Approach",
+        "kind": "landmark_approach",
+        "confidence": "approximate",
+        "notes": "Priority landmark corridor. Verify against licensed imagery before production claim."
+      },
+      "geometry": { "type": "Point", "coordinates": [5.6278, 6.3355] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "flyover_shop",
+        "name": "Shop near Ramat Park Flyover",
+        "kind": "shop",
+        "confidence": "fictional_gameplay",
+        "notes": "Gameplay POI. Not a verified real business identity."
+      },
+      "geometry": { "type": "Point", "coordinates": [5.6285, 6.3348] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "corridor_ikpoba_to_ramat",
+        "name": "Ikpoba Hill toward Ramat Park corridor",
+        "kind": "road_corridor",
+        "confidence": "approximate"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [5.6505, 6.3390],
+          [5.6450, 6.3375],
+          [5.6380, 6.3365],
+          [5.6300, 6.3355],
+          [5.6278, 6.3355]
+        ]
+      }
+    }
+  ]
+}
